@@ -5,17 +5,21 @@ import Footer from './components/footer'
 import Header from './components/header'
 import { Container } from 'react-bootstrap'
 import Home from './screens/home-screen'
+import Product from './screens/product-screen'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 function App() {
   return (
-    <div>
+    <Router>
       <Header />
       <main className="py-3">
         <Container>
-          <Home />
+          <Route path="/" component={Home} exact/>
+          <Route path="/products" component={Product} />
         </Container>
       </main>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
