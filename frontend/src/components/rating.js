@@ -21,7 +21,7 @@ const displayStars = (rating, color) => {
 		starList.push(renderStars(numberOfStarts, "fas fa-star"))
 	}
 	if (numberOfStarts !== ceil) {
-		starList.push(renderStars(1, "fas fa-star-half"))
+		starList.push(renderStars(1, "fas fa-star-half-alt"))
 	}
 	if (emptyStars > 0)
 		starList.push(renderStars(emptyStars, "far fa-star"))
@@ -46,7 +46,7 @@ const renderStars = (limit, className) => {
 
 
 
-Rating.defaulProps = {
+Rating.defaultProps = {
 	color: '#f8e825'
 }
 Rating.propTypes = {
