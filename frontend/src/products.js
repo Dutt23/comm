@@ -7,7 +7,7 @@ const products = [{
     "category": "Electronics",
     "price": 89.99,
     "countInStock": 10,
-    "rating": 4.5,
+    "rating": 3,
     "numberOfReviews": 10
 },
 {
@@ -32,7 +32,7 @@ const products = [{
     "category": "Electronics",
     "price": 100,
     "countInStock": 5,
-    "rating": 9.98,
+    "rating": 4.98,
     "numberOfReviews": 3
 },
 {
@@ -44,7 +44,7 @@ const products = [{
     "category": "Electronics",
     "price": 89.99,
     "countInStock": 10,
-    "rating": 4.5,
+    "rating": 3.5,
     "numberOfReviews": 10
 },
 {
@@ -69,7 +69,7 @@ const products = [{
     "category": "Electronics",
     "price": 100,
     "countInStock": 5,
-    "rating": 9.98,
+    "rating": 3.98,
     "numberOfReviews": 3
 }
 ]

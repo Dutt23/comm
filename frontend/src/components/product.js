@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Carousel } from 'react-bootstrap'
+import Rating from './rating'
 const Product = ({ product }) => {
 	return (
 		<Card className="my-3 p-3 rounded">
@@ -14,7 +15,12 @@ const Product = ({ product }) => {
 				</a>
 				<Card.Text as ="div">
 					<div className = "my-3">
-						{product.rating} rating from {product.numberOfReviews} reviews
+						<Rating 
+						 key={product.id}
+						 rating={product.rating}
+						 text={`${product.rating} rating from ${product.numberOfReviews} reviews`}
+						 color={"#f8e825"}
+						/>
 					</div>
 				</Card.Text>
 				<Card.Text as="h3"> 
