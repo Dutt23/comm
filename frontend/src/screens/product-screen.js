@@ -9,7 +9,7 @@ export default function Product({ match }) {
 
   useEffect(()=>{
     fetchProduct()
-  })
+  },[match.params.id])
   const fetchProduct = async () =>{
     const { data } = await axios.get(`/api/products/${match.params.id}`)
     setProduct(data)
