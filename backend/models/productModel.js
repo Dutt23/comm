@@ -58,6 +58,16 @@ const productSchema = mongoose.Schema({
   timestamps: true
 })
 
+productSchema.virtual('id').get(function(){
+  if(this && this._id)
+  return this._id.toHexString();
+});
+
+// Ensure virtual fields are serialised.
+productSchema.set('toJSON', {
+  virtuals: true
+});
 const Product = mongoose.model('Product', productSchema)
+
 
 export default Product
