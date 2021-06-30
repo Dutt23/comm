@@ -1,5 +1,4 @@
 const products = [{
-    "id": "1",
     "name": "Macbook",
     "image": "/images/test1.jpeg",
     "description": "This is the product description of product 1",
@@ -11,7 +10,6 @@ const products = [{
     "numberOfReviews": 10
 },
 {
-    "id": "2",
     "name": "Play Stattion",
     "image": "/images/test2.jpeg",
     "description": "This is the product description of product 2",
@@ -24,7 +22,6 @@ const products = [{
 }
 ,
 {
-    "id": "3",
     "name": "Duo book",
     "image": "/images/test3.jpeg",
     "description": "This is the product description of product 3",
@@ -36,7 +33,6 @@ const products = [{
     "numberOfReviews": 3
 },
 {
-    "id": "4",
     "name": "Macbook Pro",
     "image": "/images/test1.jpeg",
     "description": "This is the product description of product 1",
@@ -48,7 +44,6 @@ const products = [{
     "numberOfReviews": 10
 },
 {
-    "id": "5",
     "name": "Play Station 4",
     "image": "/images/test2.jpeg",
     "description": "This is the product description of product 2",
@@ -61,7 +56,6 @@ const products = [{
 }
 ,
 {
-    "id": "6",
     "name": "Duo book XY",
     "image": "/images/test3.jpeg",
     "description": "This is the product description of product 3",
