@@ -16,7 +16,6 @@ const Home = props => {
 	
 	useEffect(() => {
 		dispatch(listProducts())
-
 	}, [dispatch])
 
 	useEffect(() => {
