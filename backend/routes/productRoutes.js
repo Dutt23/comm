@@ -9,8 +9,6 @@ const router = express.Router();
 // @access Public
 router.get('/', asyncHandler(async (req, res) => {
   const products = await Product.find({})
-  res.status(401)
-  throw new Error('No auth')
   res.json(products)
 }))
 

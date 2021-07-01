@@ -1,6 +1,6 @@
 import { Spinner } from 'react-bootstrap'
 
-export default function Loader ({ message }) {
+export default function Loader({ message }) {
   return (
     <Spinner
       animation='border'
@@ -8,15 +8,19 @@ export default function Loader ({ message }) {
       style={{
         width: '100px',
         height: '100px',
-        // for putting it in the center
         margin: 'auto',
-        display: 'block'
-      }}>
-      <span className='sr-only'>{message}</span>
+        display: 'block',
+        position: 'fixed', 
+        top: '50%',
+        left: '50%',
+        backgroundColor: 'transparent'
+      }}
+    >
+      <span className='sr-only'>Loading...</span>
     </Spinner>
   )
 }
 
-Loader.defaultProps ={
-  message :'Loading...'
+Loader.defaultProps = {
+  message: 'Loading...'
 }

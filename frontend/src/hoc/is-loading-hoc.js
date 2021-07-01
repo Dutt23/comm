@@ -3,7 +3,6 @@ import Loader from '../components/loader'
 
 export const isLoadingHoc = (WrapperComponent, message) => {
 
-  
   function HOC(props) {
     const [isLoading, setLoading] = useState(true)
     const setLoadingState = componentLoading => {
@@ -12,7 +11,7 @@ export const isLoadingHoc = (WrapperComponent, message) => {
 
     return (
       <>
-        {isLoading && <Loader message={message} />}
+        {isLoading && <Loader message={message} /> }
         <WrapperComponent {...props} setLoading={setLoadingState} />
       </>
 
