@@ -99,7 +99,6 @@ const Product = ({ match, setLoading, history }) => {
                             </option>
                           ))
                         }
-
                       </Form.Control>
                     </Col>
                   </Row>
