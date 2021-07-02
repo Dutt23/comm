@@ -6,6 +6,7 @@ import Header from './components/header'
 import { Container } from 'react-bootstrap'
 import Home from './screens/home-screen'
 import Product from './screens/product-screen'
+import Cart from './screens/cart-screen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Container>
           <Route path="/" component={Home} exact/>
           <Route path="/product/:id" component={Product} />
+          {/* question mark to make it optional */}
+          <Route path="/cart/:id?" component={Cart} />
         </Container>
       </main>
       <Footer />
