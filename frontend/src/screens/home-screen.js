@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/product'
 import { listProducts } from '../actions/productActions'
-import Loader from '../components/loader'	
 import Message from '../components/message'	
 import { isLoadingHoc } from '../hoc/is-loading-hoc'
 const Home = props => {

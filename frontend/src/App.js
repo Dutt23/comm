@@ -7,6 +7,7 @@ import { Container } from 'react-bootstrap'
 import Home from './screens/home-screen'
 import Product from './screens/product-screen'
 import Cart from './screens/cart-screen'
+import Login from './screens/login-screen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
       <Header />
       <main className="py-3">
         <Container>
-          <Route path="/" component={Home} exact/>
+        <Route path="/login" component={Login} />
           <Route path="/product/:id" component={Product} />
           {/* question mark to make it optional */}
           <Route path="/cart/:id?" component={Cart} />
+          <Route path="/" component={Home} exact/>
         </Container>
       </main>
       <Footer />
