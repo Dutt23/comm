@@ -9,6 +9,10 @@ import {
   USER_DETAILS_REQUEST,
   USER_DETAILS_REQUEST_SUCCESS,
   USER_DETAILS_REQUEST_FAILURE,
+  USER_UPDATE_PROFILE_REQUEST,
+  USER_UPDATE_PROFILE_REQUEST_SUCCESS,
+  USER_UPDATE_PROFILE_REQUEST_FAILURE,
+  USER_UPDATE_PROFILE_SUCCESS_FALSE
 } from '../constants/userConstants'
 import axios from 'axios'
 export const login = (email, password) => async (dispatch) => {
@@ -108,5 +112,52 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 
   catch (error) {
     dispatch({ type: USER_DETAILS_REQUEST_FAILURE, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
+  }
+}
+
+export const updateUserProfile = (user) => async (dispatch, getState) => {
+
+  try {
+    dispatch({
+      type: USER_UPDATE_PROFILE_REQUEST
+    })
+    
+    const { userLogin: { userInfo } } = getState()
+    const config = {
+      headers: { 
+        'Content-Type': "application/json",
+         Authorization: `Bearer ${userInfo.token}`
+     }
+    }
+
+    const { data } = await axios.put(`/api/users/profile`, user, config)
+
+    dispatch({
+      type: USER_UPDATE_PROFILE_REQUEST_SUCCESS,
+      payload: data
+    })
+
+    dispatch({
+      type: USER_LOGIN_REQUEST_SUCCESS,
+      payload: data
+    })
+
+    dispatch({
+      type: USER_DETAILS_REQUEST_SUCCESS,
+      payload: data
+    })
+    
+    setTimeout(() =>{
+      dispatch({
+        type: USER_UPDATE_PROFILE_SUCCESS_FALSE,
+        
+      })
+    }, 3000)
+    
+  
+  }
+
+  catch (error) {
+    dispatch({ type: USER_UPDATE_PROFILE_REQUEST_FAILURE, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
   }
 }

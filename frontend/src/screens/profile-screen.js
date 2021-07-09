@@ -3,7 +3,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/message'
 import Loader from '../components/loader'
-import { getUserDetails } from '../actions/userActions'
+import { getUserDetails, updateUserProfile } from '../actions/userActions'
 
 const ProfileScreen = ({ history }) => {
 
@@ -22,6 +22,9 @@ const ProfileScreen = ({ history }) => {
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
 
+  const userProfile = useSelector(state => state.userUpdateProfile)
+  const { success } = userProfile
+
   const submitHandler = (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
@@ -29,10 +32,16 @@ const ProfileScreen = ({ history }) => {
       return;
     }
     // Dispatch update profile
-    // dispatch(register(email, password, name))
+    dispatch(updateUserProfile({
+      id: user._id,
+      name,
+      email,
+      password
+    }))
 
   }
 
+  
   useEffect(() => {
     if (!userInfo) {
       history.push('/login')
@@ -52,6 +61,7 @@ const ProfileScreen = ({ history }) => {
         <h2>User profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
+        {success && <Message variant="success">Success</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
 
