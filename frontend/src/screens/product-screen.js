@@ -91,6 +91,7 @@ const Product = ({ match, setLoading, history }) => {
                       <Form.Control
                         onChange={(e) => setQty(e.target.value)}
                         as="select"
+                        custom
                         value={qty}>
                         {
                           [...Array(product.countInStock).keys()].map(x => (
@@ -103,7 +104,6 @@ const Product = ({ match, setLoading, history }) => {
                     </Col>
                   </Row>
                 </ListGroup.Item>
-
               )}
               <ListGroup.Item>
                 <Button
