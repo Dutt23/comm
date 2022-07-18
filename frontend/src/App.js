@@ -11,6 +11,8 @@ import Login from './screens/login-screen'
 import Register from './screens/register-screen'
 import Profile from './screens/profile-screen'
 import Shipping from './screens/shipping-screen'
+import Payment from './screens/payment-screen'
+import PlaceOrder from './screens/place-order-screen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <Header />
       <main className="py-3">
         <Container>
+        <Route path="/placeorder" component={PlaceOrder} />
+        <Route path="/Payment" component={Payment} />
         <Route path="/shipping" component={Shipping}/>
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
